@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mystery Pokédex</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Silkscreen&display=swap" rel="stylesheet">
+</head>
+<body>
+    <main>
+        <!-- Mystery screen -->
+        <section id="mystery">
+            <h1>Who's That Pokémon?</h1>
+            <p class="mystery-subtitle">Your future partner awaits...</p>
+            <div id="pokeball-container">
+                <button id="reveal-button" class="pokeball" aria-label="Reveal Pokémon">
+                    <span class="pokeball-top"></span>
+                    <span class="pokeball-band"></span>
+                    <span class="pokeball-center"></span>
+                </button>
+            </div>
+            <p class="tap-instruction">TAP TO REVEAL</p>
+            <div id="flash"></div>
+        </section>
+
+        <!-- Loading screen -->
+        <section id="loading" class="hidden">
+            <p>Loading...</p>
+        </section>
+
+        <!-- Error screen -->
+        <section id="error" class="hidden">
+            <p id="error-message"></p>
+            <button id="retry-button">Try Again</button>
+        </section>
+
+        <!-- Pokémon result -->
+        <section id="result" class="hidden">
+            <div id="hero">
+                <h1 id="pokemon-name" class="pokemon-title"></h1>
+                <div class="dex-badge">
+                    <span class="dex-label">NATIONAL DEX</span>
+                    <span id="pokemon-number"></span>
+                </div>
+                <img id="pokemon-image" alt="Pokémon">  
+            <div class="pokemon-actions">
+                <button id="shiny-toggle" type="button" aria-pressed="false">
+                    <span id="shiny-icon">✦</span>
+                    <span id="shiny-text">Show Shiny</span>
+                </button>
+
+                <button id="cry-button" type="button">
+                    <span>♪</span>
+                    <span>Play Cry</span>
+                </button>
+            </div>
+
+                <div id="types"></div>
+            </div>
+            <!-- Pokémon information cards -->
+            <div class="pokemon-info">
+                <div class="info-row">
+                    <div class="info-card">
+                        <span class="info-label">HEIGHT</span>
+                        <span id="height" class="info-value"></span>
+                    </div>
+
+                    <div class="info-card">
+                        <span class="info-label">WEIGHT</span>
+                        <span id="weight" class="info-value"></span>
+                    </div>
+                </div>
+
+                <div class="info-card abilities-card">
+                    <span class="info-label">ABILITIES</span>
+                    <span id="abilities" class="info-value"></span>
+                </div>
+            </div>
+
+            <section class="stats-card">
+                <h2>Base Stats</h2>
+                <div id="stats"></div>
+
+                <div class="stats-total">
+                    <span>Total</span>
+                    <span id="stats-total"></span>
+                </div>
+            </section>
+
+            <!-- Evolution chain -->
+            <section class="evolution-card">
+                <h2>Evolution Chain</h2>
+
+                <div id="evolution-chain">
+                    <p>Loading evolutions...</p>
+                </div>
+            </section>
+
+            <button id="details-button">View Pokédex Entry</button>
+
+            <section id="details" class="hidden">
+                <h2>Pokédex Description</h2>
+                <p id="description"></p>
+            </section>
+        </section>
+    </main>
+</body>
+</html>
