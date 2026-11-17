@@ -108,6 +108,13 @@ async function reveal() {
         renderPokemon(pokemon);
         loadEvolutionChain(pokemon);
 
+        window.dispatchEvent(new CustomEvent("pokemonRevealed", {
+            detail: {
+                id: pokemon.id,
+                name: pokemon.name
+            }
+        }));
+
         // Step 2: Expand the flash
         flash.classList.add("active");
 

@@ -8,6 +8,7 @@
 
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
+    <script type="module" src="firebase.js"></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,6 +16,58 @@
     <link href="https://fonts.googleapis.com/css2?family=Silkscreen&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div id="account-bar">
+        <span id="account-status">Guest</span>
+
+        <div class="account-actions">
+            <button id="collection-button" type="button">
+                My Pokédex
+            </button>
+
+            <button id="account-button" type="button">
+                Log In / Sign Up
+            </button>
+        </div>
+    </div>
+
+    <section id="auth-panel" class="hidden">
+        <div class="auth-card">
+            <h2>Trainer Account</h2>
+            <p>Sign in to save your Pokémon collection!</p>
+
+            <form id="auth-form">
+                <input
+                    id="auth-email"
+                    type="email"
+                    placeholder="Email"
+                    autocomplete="email"
+                    required
+                >
+
+                <input
+                    id="auth-password"
+                    type="password"
+                    placeholder="Password"
+                    autocomplete="current-password"
+                    minlength="6"
+                    required
+                >
+
+                <button id="login-button" type="submit">Log In</button>
+                <button id="signup-button" type="button">Create Account</button>
+            </form>
+
+            <div class="auth-divider">OR</div>
+
+            <button id="google-button" type="button">
+                Continue with Google
+            </button>
+
+            <p id="auth-message" role="status"></p>
+
+            <button id="close-auth" type="button">Close</button>
+        </div>
+    </section>
     <main>
         <!-- Mystery screen -->
         <section id="mystery">
@@ -110,6 +163,24 @@
                 <h2>Pokédex Description</h2>
                 <p id="description"></p>
             </section>
+        </section>
+        <section id="collection" class="hidden">
+            <div class="collection-header">
+                <h1>My Pokédex</h1>
+                <p>Your Pokémon collection</p>
+
+                <div class="collection-progress">
+                    <span id="collection-count">0 Pokémon discovered</span>
+                </div>
+
+                <button id="collection-close" type="button">
+                    Back to Pokémon
+                </button>
+            </div>
+
+            <div id="collection-grid"></div>
+
+            <p id="collection-message"></p>
         </section>
     </main>
 </body>

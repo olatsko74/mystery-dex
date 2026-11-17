@@ -1003,3 +1003,312 @@ main {
     animation: idleShake 3s ease-in-out infinite;
 }
 
+/* ========================================
+   TRAINER ACCOUNT
+======================================== */
+
+#account-bar {
+    position: relative;
+    z-index: 10;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+
+    padding: 12px 20px;
+
+    background-color: #171717;
+    color: white;
+}
+
+#account-status {
+    font-size: 14px;
+    font-weight: 800;
+    overflow-wrap: anywhere;
+}
+
+#account-button {
+    padding: 10px 16px;
+
+    border: none;
+    border-radius: 20px;
+
+    background-color: #ee3333;
+    color: white;
+
+    font-size: 13px;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+#auth-panel {
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+
+    background-color: rgba(0, 0, 0, 0.85);
+}
+
+.auth-card {
+    width: 100%;
+    max-width: 400px;
+    max-height: 90dvh;
+    overflow-y: auto;
+
+    padding: 28px 22px;
+
+    background-color: white;
+    color: #242424;
+
+    border-radius: 20px;
+    text-align: center;
+}
+
+.auth-card h2 {
+    margin-top: 0;
+}
+
+.auth-card form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.auth-card input {
+    width: 100%;
+    padding: 14px;
+
+    border: 1px solid #cccccc;
+    border-radius: 10px;
+
+    font-family: inherit;
+    font-size: 16px;
+}
+
+.auth-card button {
+    width: 100%;
+    margin-top: 10px;
+    padding: 13px;
+
+    border: none;
+    border-radius: 12px;
+
+    background-color: #ee3333;
+    color: white;
+
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.auth-card #google-button {
+    background-color: #242424;
+}
+
+.auth-card #close-auth {
+    background-color: #eeeeee;
+    color: #242424;
+}
+
+.auth-divider {
+    margin: 20px 0;
+    font-size: 12px;
+    font-weight: 800;
+    color: #777777;
+}
+
+#auth-message {
+    color: #c22e28;
+    font-size: 13px;
+    overflow-wrap: anywhere;
+}
+
+/* ========================================
+   MY POKÉDEX
+======================================== */
+
+.account-actions {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 8px;
+}
+
+#collection-button {
+    padding: 10px 16px;
+    border: none;
+    border-radius: 20px;
+
+    background-color: white;
+    color: #242424;
+
+    font-size: 13px;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+#collection {
+    min-height: 100dvh;
+    padding: 25px 20px;
+
+    background-color: #f5f5f5;
+    color: #242424;
+}
+
+.collection-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.collection-header h1 {
+    margin-bottom: 8px;
+    font-size: 32px;
+    font-weight: 900;
+}
+
+.collection-header p {
+    color: #666666;
+}
+
+.collection-progress {
+    margin: 20px auto;
+    padding: 15px;
+
+    max-width: 350px;
+    background-color: white;
+    border-radius: 15px;
+
+    font-weight: 800;
+}
+
+#collection-close {
+    padding: 12px 22px;
+    border: none;
+    border-radius: 25px;
+
+    background-color: #ee3333;
+    color: white;
+
+    font-weight: 800;
+    cursor: pointer;
+}
+
+#collection-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 15px;
+
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.collection-card {
+    padding: 15px 10px;
+
+    background-color: white;
+    border-radius: 18px;
+    text-align: center;
+}
+
+.collection-card img {
+    width: 100%;
+    max-width: 140px;
+    height: 140px;
+    object-fit: contain;
+}
+
+.collection-card h3 {
+    margin: 8px 0 4px;
+    font-size: 16px;
+    text-transform: capitalize;
+}
+
+.collection-card span {
+    color: #777777;
+    font-size: 12px;
+    font-weight: 800;
+}
+
+#collection-message {
+    text-align: center;
+    color: #666666;
+}
+
+@media (min-width: 650px) {
+    #collection-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+}
+
+/* ========================================
+   MOBILE ACCOUNT BAR
+======================================== */
+
+@media (max-width: 600px) {
+    #account-bar {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+        padding: 12px 15px;
+    }
+
+    #account-status {
+        text-align: center;
+        font-size: 13px;
+    }
+
+    .account-actions {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+    }
+
+    #account-button,
+    #collection-button {
+        width: 100%;
+        min-width: 0;
+        padding: 12px 8px;
+        font-size: 12px;
+        overflow-wrap: anywhere;
+    }
+
+    #collection {
+        padding: 20px 12px;
+    }
+
+    .collection-header h1 {
+        font-size: 28px;
+    }
+
+    #collection-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+    }
+
+    .collection-card {
+        min-width: 0;
+        padding: 12px 8px;
+    }
+
+    .collection-card img {
+        height: 110px;
+        max-width: 100%;
+    }
+
+    .collection-card h3 {
+        font-size: 14px;
+        overflow-wrap: anywhere;
+    }
+
+    .collection-card span {
+        font-size: 11px;
+    }
+}
